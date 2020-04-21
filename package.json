@@ -1,0 +1,9 @@
+{
+  "name": "sophy",
+  "version": "0.0.0",
+  "description": "Node.js fs wrapper library for JavaScript/TypeScript.",
+  "main": "lib/index.js",
+  "author": "hota1024",
+  "license": "MIT",
+  "private": false
+}
