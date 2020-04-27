@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "file-type": "^14.2.0",
+    "fs-extra": "^9.0.0",
     "tmp-promise": "^2.0.2"
   }
 }
