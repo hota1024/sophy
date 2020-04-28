@@ -3,11 +3,17 @@ import { Stream } from 'stream'
 import { File } from '../../impls/nodes/File'
 import { Directory } from '../../impls/nodes/Directory'
 import { Node } from '../../abstracts/Node'
+import { AdapterInterface } from '../Adapter'
 
 /*
  * Sophy interface.
  */
 export interface SophyInterface {
+  /**
+   * Adapter instance.
+   */
+  readonly adapter: AdapterInterface
+
   /**
    * Check whether a file or directory exists.
    *
@@ -117,7 +123,7 @@ export interface SophyInterface {
    * @param path Path to the file or directory.
    * @param newPath Move destination path.
    */
-  move(path: string, newPath: string): PromiseOr<File>
+  move(path: string, newPath: string): PromiseOr<Node>
 
   /**
    * Copy a file.
@@ -125,7 +131,7 @@ export interface SophyInterface {
    * @param path Path to file.
    * @param newPath Copy destination path.
    */
-  copy(path: string, newPath: string): PromiseOr<File>
+  copy(path: string, newPath: string): PromiseOr<Node>
 
   /**
    * Delete a file or directory.
