@@ -6,6 +6,7 @@
   "author": "hota1024",
   "license": "MIT",
   "private": false,
+  "type": "lib",
   "files": [
     "lib"
   ],
