@@ -1,11 +1,12 @@
 import * as fs from 'fs'
 import { promises as asyncFs } from 'fs'
 import { Adapter } from '../../../abstracts/Adapter/Adapter'
-import { NodeMeta } from '../../../interfaces/Adapter'
+import { NodeMeta, FileMeta } from '../../../interfaces/Adapter'
 import { NodeType } from '../../../types/NodeType'
 import * as FileType from 'file-type'
 import * as fse from 'fs-extra'
 import { file as TmpFile } from 'tmp-promise'
+import { DirectoryMeta } from '../../../interfaces/Adapter/DirectoryMeta'
 
 /*
  * LocalAdapter class.
@@ -99,7 +100,7 @@ export class LocalAdapter extends Adapter {
 
     await asyncFs.writeFile(fullPath, contents)
 
-    const nodeMeta: NodeMeta = {
+    const nodeMeta: FileMeta = {
       path: fullPath,
       type: NodeType.File,
     }
@@ -130,7 +131,7 @@ export class LocalAdapter extends Adapter {
 
     await asyncFs.writeFile(fullPath, contents)
 
-    const nodeMeta: NodeMeta = {
+    const nodeMeta: FileMeta = {
       path: fullPath,
       type: NodeType.File,
     }
@@ -161,7 +162,7 @@ export class LocalAdapter extends Adapter {
 
     await asyncFs.writeFile(fullPath, contents)
 
-    const nodeMeta: NodeMeta = {
+    const nodeMeta: FileMeta = {
       path: fullPath,
       type: NodeType.File,
     }
@@ -191,7 +192,7 @@ export class LocalAdapter extends Adapter {
     const fullPath = this.resolve(path)
     await asyncFs.appendFile(fullPath, contents)
 
-    const nodeMeta: NodeMeta = {
+    const nodeMeta: FileMeta = {
       path: fullPath,
       type: NodeType.File,
     }
@@ -209,7 +210,7 @@ export class LocalAdapter extends Adapter {
     const fullPath = this.resolve(path)
     const { path: tempFilePath, cleanup } = await TmpFile()
 
-    return new Promise<NodeMeta>((resolve, reject) => {
+    return new Promise<FileMeta></FileMeta>((resolve, reject) => {
       fs.writeFile(tempFilePath, contents, function (err) {
         if (err) {
           reject(err)
@@ -308,7 +309,7 @@ export class LocalAdapter extends Adapter {
 
     await fse.mkdirs(fullPath)
 
-    const nodeMeta: NodeMeta = {
+    const nodeMeta: DirectoryMeta = {
       path: fullPath,
       type: NodeType.Directory,
     }
