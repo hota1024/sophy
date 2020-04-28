@@ -12,6 +12,10 @@
   "scripts": {
     "build": "tsc"
   },
+  "keywords": [
+    "fs",
+    "typescript"
+  ],
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^13.13.1",
