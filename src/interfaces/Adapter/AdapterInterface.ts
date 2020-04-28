@@ -1,6 +1,8 @@
 import { PromiseOr } from '../../types/PromiseOr'
 import { Stream } from 'stream'
-import { NodeMeta } from './FileMeta'
+import { NodeMeta } from './NodeMeta'
+import { FileMeta } from '../..'
+import { DirectoryMeta } from './DirectoryMeta'
 
 /*
  * Adapter interface.
@@ -59,7 +61,7 @@ export interface AdapterInterface {
    * @param path Path to file.
    * @param contents Write contents.
    */
-  write(path: string, contents: string): PromiseOr<NodeMeta>
+  write(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Write a new file using a stream.
@@ -74,7 +76,7 @@ export interface AdapterInterface {
    * @param path Path to file.
    * @param contents Contents.
    */
-  update(path: string, contents: string): PromiseOr<NodeMeta>
+  update(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Update a file using a stream.
@@ -89,7 +91,7 @@ export interface AdapterInterface {
    * @param path Path to file.
    * @param contents Put contents.
    */
-  put(path: string, contents: string): PromiseOr<NodeMeta>
+  put(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Create or Update a file using a stream.
@@ -104,7 +106,7 @@ export interface AdapterInterface {
    * @param path Path to file.
    * @param contents Append contents.
    */
-  append(path: string, contents: string): PromiseOr<NodeMeta>
+  append(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Prepend a contents to a file.
@@ -112,7 +114,7 @@ export interface AdapterInterface {
    * @param path Path to file.
    * @param contents Prepend contents.
    */
-  prepend(path: string, contents: string): PromiseOr<NodeMeta>
+  prepend(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Move a file or directory.
@@ -142,5 +144,5 @@ export interface AdapterInterface {
    *
    * @param path Path to directory.
    */
-  makeDirectory(path: string): PromiseOr<NodeMeta>
+  makeDirectory(path: string): PromiseOr<DirectoryMeta>
 }
