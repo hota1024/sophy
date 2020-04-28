@@ -3,6 +3,7 @@ import { PromiseOr } from '../../types/PromiseOr'
 import { Stream } from 'stream'
 import * as path from 'path'
 import { NodeType } from '../../types'
+import { DirectoryMeta } from '../../interfaces/Adapter/DirectoryMeta'
 
 /*
  * Adapter abstract class.
