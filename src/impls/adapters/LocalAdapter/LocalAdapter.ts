@@ -101,7 +101,7 @@ export class LocalAdapter extends Adapter {
     await asyncFs.writeFile(fullPath, contents)
 
     const nodeMeta: FileMeta = {
-      path: fullPath,
+      path,
       type: NodeType.File,
     }
 
@@ -132,7 +132,7 @@ export class LocalAdapter extends Adapter {
     await asyncFs.writeFile(fullPath, contents)
 
     const nodeMeta: FileMeta = {
-      path: fullPath,
+      path,
       type: NodeType.File,
     }
 
@@ -163,7 +163,7 @@ export class LocalAdapter extends Adapter {
     await asyncFs.writeFile(fullPath, contents)
 
     const nodeMeta: FileMeta = {
-      path: fullPath,
+      path,
       type: NodeType.File,
     }
 
@@ -193,7 +193,7 @@ export class LocalAdapter extends Adapter {
     await asyncFs.appendFile(fullPath, contents)
 
     const nodeMeta: FileMeta = {
-      path: fullPath,
+      path,
       type: NodeType.File,
     }
 
@@ -241,7 +241,7 @@ export class LocalAdapter extends Adapter {
               .on('finish', function () {
                 cleanup()
                 resolve({
-                  path: fullPath,
+                  path,
                   type: NodeType.File,
                 })
               })
@@ -262,7 +262,7 @@ export class LocalAdapter extends Adapter {
     await asyncFs.rename(fullPath, newFullPath)
 
     const nodeMeta: NodeMeta = {
-      path: newFullPath,
+      path: newPath,
       type: NodeType.Unknown,
     }
 
@@ -281,7 +281,7 @@ export class LocalAdapter extends Adapter {
     await fse.copy(fullPath, newFullPath)
 
     const nodeMeta: NodeMeta = {
-      path: newFullPath,
+      path: newPath,
       type: NodeType.Unknown,
     }
 
@@ -310,7 +310,7 @@ export class LocalAdapter extends Adapter {
     await fse.mkdirs(fullPath)
 
     const nodeMeta: DirectoryMeta = {
-      path: fullPath,
+      path,
       type: NodeType.Directory,
     }
 
@@ -342,7 +342,7 @@ export class LocalAdapter extends Adapter {
       : NodeType.Unknown
 
     const nodeMeta: NodeMeta = {
-      path: this.resolve(path, dirent.name),
+      path: this.joinPaths(path, dirent.name),
       type,
     }
 
