@@ -27,7 +27,7 @@ export abstract class Adapter implements AdapterInterface {
    * @param paths Paths.
    */
   protected resolve(...paths: string[]) {
-    return path.resolve(this.root, ...paths)
+    return path.join(this.root, ...paths)
   }
 
   /**
