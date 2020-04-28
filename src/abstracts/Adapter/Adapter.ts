@@ -33,6 +33,15 @@ export abstract class Adapter implements AdapterInterface {
   }
 
   /**
+   * Join paths.
+   *
+   * @param paths Paths.
+   */
+  protected joinPaths(...paths: string[]) {
+    return path.join(...paths)
+  }
+
+  /**
    * Check whether a file or directory exists.
    *
    * @param path Path to file or directory.
