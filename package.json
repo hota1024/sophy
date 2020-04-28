@@ -6,9 +6,16 @@
   "author": "hota1024",
   "license": "MIT",
   "private": false,
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^13.13.1",
+    "@types/tmp": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "eslint": "^6.8.0",
