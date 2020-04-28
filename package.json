@@ -17,6 +17,11 @@
     "fs",
     "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hota1024/sophy"
+  },
+  "homepage": "https://github.com/hota1024/sophy",
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^13.13.1",
