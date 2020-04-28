@@ -24,6 +24,24 @@ export class Sophy implements SophyInterface {
   }
 
   /**
+   * Get `File` node object.
+   *
+   * @param path Path to file.
+   */
+  file(path: string): File {
+    return new File(this, path)
+  }
+
+  /**
+   * Get `Directory` node object.
+   *
+   * @param path Path to directory.
+   */
+  directory(path: string): Directory {
+    return new Directory(this, path)
+  }
+
+  /**
    * Check whether a file or directory exists.
    *
    * @param path Path to file or directory.
