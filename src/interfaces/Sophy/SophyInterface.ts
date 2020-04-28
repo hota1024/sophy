@@ -15,6 +15,20 @@ export interface SophyInterface {
   readonly adapter: AdapterInterface
 
   /**
+   * Get `File` node object.
+   *
+   * @param path Path to file.
+   */
+  file(path: string): File
+
+  /**
+   * Get `Directory` node object.
+   *
+   * @param path Path to directory.
+   */
+  directory(path: string): Directory
+
+  /**
    * Check whether a file or directory exists.
    *
    * @param path Path to file or directory.
