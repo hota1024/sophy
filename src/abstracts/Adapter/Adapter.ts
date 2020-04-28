@@ -1,7 +1,8 @@
-import { AdapterInterface, NodeMeta } from '../../interfaces/Adapter'
+import { AdapterInterface, NodeMeta, FileMeta } from '../../interfaces/Adapter'
 import { PromiseOr } from '../../types/PromiseOr'
 import { Stream } from 'stream'
 import * as path from 'path'
+import { NodeType } from '../../types'
 
 /*
  * Adapter abstract class.
@@ -78,7 +79,10 @@ export abstract class Adapter implements AdapterInterface {
    * @param path Path to file.
    * @param contents Write contents.
    */
-  abstract write(path: string, contents: string): PromiseOr<NodeMeta>
+  abstract write(
+    path: string,
+    contents: string
+  ): PromiseOr<NodeMeta & { type: NodeType.File }>
 
   /**
    * Write a new file using a stream.
@@ -93,7 +97,7 @@ export abstract class Adapter implements AdapterInterface {
    * @param path Path to file.
    * @param contents Contents.
    */
-  abstract update(path: string, contents: string): PromiseOr<NodeMeta>
+  abstract update(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Update a file using a stream.
@@ -108,7 +112,7 @@ export abstract class Adapter implements AdapterInterface {
    * @param path Path to file.
    * @param contents Put contents.
    */
-  abstract put(path: string, contents: string): PromiseOr<NodeMeta>
+  abstract put(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Create or Update a file using a stream.
@@ -123,7 +127,7 @@ export abstract class Adapter implements AdapterInterface {
    * @param path Path to file.
    * @param contents Append contents.
    */
-  abstract append(path: string, contents: string): PromiseOr<NodeMeta>
+  abstract append(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Prepend a contents to a file.
@@ -131,7 +135,7 @@ export abstract class Adapter implements AdapterInterface {
    * @param path Path to file.
    * @param contents Prepend contents.
    */
-  abstract prepend(path: string, contents: string): PromiseOr<NodeMeta>
+  abstract prepend(path: string, contents: string): PromiseOr<FileMeta>
 
   /**
    * Move a file or directory.
@@ -161,5 +165,5 @@ export abstract class Adapter implements AdapterInterface {
    *
    * @param path Path to directory.
    */
-  abstract makeDirectory(path: string): PromiseOr<NodeMeta>
+  abstract makeDirectory(path: string): PromiseOr<DirectoryMeta>
 }
