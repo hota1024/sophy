@@ -1,16 +1,4 @@
-import { NodeType } from '../../types/NodeType'
+import { NodeMeta } from './NodeMeta'
+import { NodeType } from '../../types'
 
-/*
- * NodeMeta type.
- */
-export type NodeMeta = {
-  /**
-   * Node path.
-   */
-  path: string
-
-  /**
-   * Node type.
-   */
-  type: NodeType
-}
+export type FileMeta = NodeMeta & { type: NodeType.File }
