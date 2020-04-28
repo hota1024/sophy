@@ -210,7 +210,7 @@ export class LocalAdapter extends Adapter {
     const fullPath = this.resolve(path)
     const { path: tempFilePath, cleanup } = await TmpFile()
 
-    return new Promise<FileMeta></FileMeta>((resolve, reject) => {
+    return new Promise<FileMeta>((resolve, reject) => {
       fs.writeFile(tempFilePath, contents, function (err) {
         if (err) {
           reject(err)
