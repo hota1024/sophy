@@ -27,3 +27,15 @@ jobs:
 
     - name: "💡 Generate documentation with typedoc"
       run: npm run doc
+    
+    - name: "⬆ Commit and Push"
+      run: |
+        git config user.name "hota1024"
+        git config user.email "hotalog@hota1024.com"
+        git remote set-url origin https://hota1024:${{ secrets.GITHUB_PASS }}@github.com/hota1024/sophy
+        git branch
+        git checkout master
+        git branch
+        git add .
+        git commit -m "update!"
+        git push origin master
