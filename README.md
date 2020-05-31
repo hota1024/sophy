@@ -18,3 +18,7 @@ import sophy from 'sophy'
   await sophy.write('test.txt', 'Hello world')
 })()
 ```
+
+## Documentation
+
+<https://sophy.now.sh/classes/_classes_sophy_sophy_.sophy.html>
