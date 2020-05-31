@@ -24,4 +24,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: "💡 Generate documentation with typedoc"
-      run: npm run typedoc
+      run: npm run doc
