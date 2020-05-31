@@ -11,7 +11,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "typedoc": "typedoc --out ./docs ./src"
   },
   "keywords": [
     "fs",
