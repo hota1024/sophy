@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "typedoc": "typedoc --out ./docs ./src"
+    "doc": "typedoc --out ./docs ./src"
   },
   "keywords": [
     "fs",
