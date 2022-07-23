@@ -37,7 +37,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "file-type": "^14.2.0",
+    "file-type": "^16.5.4",
     "fs-extra": "^9.0.0",
     "tmp-promise": "^2.0.2"
   }
